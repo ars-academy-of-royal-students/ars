@@ -6,6 +6,31 @@ body {
     background-color: #121212;
     color: white;
 }
+/* Back Button Styles */
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #292828; /* Dark teal */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #121212; /* Darker teal */
+    color: #4e14d4; /* Yellow */
+}
+
+.back-button:active {
+    background-color: #a5a8bd; /* Even darker */
+}
+
 
 /* Banner Styling */
 .banner {
