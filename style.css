@@ -186,13 +186,28 @@ margin-left: 20px;
   align-items: center; /* Center content on mobile */
 }
 
-/* For larger screens (PC and above) */
-@media (min-width: 768px) {
+
+/* Profile alignment for larger screens (PC and above) */
+@media (min-width: 1024px) {
+  .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Align contents in a row for PC */
+    text-align: left;
+  }
+
+  .circle-effect {
+    margin-right: 40px; /* Add space between the circle and text */
+  }
+
   .intro-text {
-    margin-right: 40px; /* Add margin to the right for desktop */
-    align-items: flex-start; /* Align text to the left on desktop */
+    flex: 1; /* Allow the text to take up remaining space */
+    align-items: flex-start; /* Align text to the left */
+    text-align: left;
   }
 }
+
 
 .intro-text h1 {
   font-size: 3rem;
