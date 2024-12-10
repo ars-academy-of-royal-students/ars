@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "academyofroyalstudents",
     "public": "/",
     "ignore": [
       "firebase.json",
