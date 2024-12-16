@@ -35,22 +35,16 @@ body {
   align-items: center;
   background-color: #333;
   padding: 10px 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  margin: 20px;
+  border-radius: 20px;
+  margin: 0 auto; /* Center-align the navbar */
+  width: 90%; /* Adjust width to be almost full but leave room for aesthetics */
+  max-width: 1200px; /* Ensure it doesn’t become too wide on large screens */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-
-nav{
-margin-left: 20px;
-
-}
-
+/* Align items on the left side of the navbar */
 .navbar-left {
   display: flex;
   align-items: center;
@@ -65,10 +59,10 @@ margin-left: 20px;
 .brand-name {
   color: white;
   font-size: 24px;
-  margin: 0;
   text-decoration: none;
 }
 
+/* Navbar links (right side) */
 .navbar-right {
   list-style-type: none;
   display: flex;
@@ -78,7 +72,6 @@ margin-left: 20px;
 
 .navbar-right li {
   margin: 0 15px;
-  position: relative; /* Required for the hover effect */
 }
 
 .navbar-right .nav-link {
@@ -86,32 +79,14 @@ margin-left: 20px;
   text-decoration: none;
   font-size: 18px;
   position: relative;
-  display: inline-block;
-  padding: 5px 0;
   transition: color 0.3s ease;
 }
 
-/* Hover Effect: Line Under Text */
-.navbar-right .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background-color: rgb(252, 16, 16); /* Aquamarine */
-  transition: width 0.3s ease;
-}
-
-.navbar-right .nav-link:hover::after {
-  width: 100%; /* Line grows across the text */
-}
-
 .navbar-right .nav-link:hover {
-  color: rgb(252, 15, 15); /* Text changes color on hover */
+  color: rgb(252, 15, 15);
 }
 
-/* Hamburger Menu for Mobile */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -127,25 +102,31 @@ margin-left: 20px;
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
   .navbar-right {
-      display: none;
-      flex-direction: column;
-      background-color: #333;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      width: 200px;
-      border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 70px; /* Adjusted to sit below the navbar */
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
+    z-index: 1000;
   }
 
   .navbar-right.active {
-      display: flex;
+    display: flex;
   }
 
   .hamburger {
-      display: flex;
+    display: flex;
   }
 }
+
 
 /* General Reset */
 * {
