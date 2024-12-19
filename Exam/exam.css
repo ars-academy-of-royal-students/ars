@@ -1,3 +1,4 @@
+/* Global Styles */
 /* Global Reset */
 * {
   margin: 0;
@@ -11,14 +12,17 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column; /* Ensure content flows vertically */
+  min-height: 100vh; /* Minimum height to cover the viewport */
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  background-color: rgb(127, 255, 212); /* Aquamarine */
-  font-family: Arial, sans-serif;
+  background: url(./../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
+  background-size: cover; /* Ensure the image covers the viewport without zooming */
+  background-position: center; /* Crop evenly from both sides */
   margin: 0;
   padding: 0;
 }
-
 
 /* Navbar Styles */
 .navbar {
@@ -47,9 +51,10 @@ nav {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 .brand-name {
@@ -118,52 +123,60 @@ nav {
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-right {
-      display: none;
-      flex-direction: column;
-      background-color: #333;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      width: 200px;
-      border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
   }
 
   .navbar-right.active {
-      display: flex;
+    display: flex;
   }
 
   .hamburger {
-      display: flex;
+    display: flex;
   }
 }
-
+.select-class{
+  color: aquamarine;
+}
+/* Cards Container */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row by default */
+  grid-template-columns: repeat(3, 1fr);
+  /* Default: 3 cards per row */
   gap: 20px;
+  /* Increased gap between cards */
   padding: 20px;
-  margin-top: 40px;
+  margin: 0 auto;
+  max-width: 1200px;
+  /* Center content */
+  box-sizing: border-box;
 }
 
-/* Ensure the cards don't go outside the container */
 .card {
-  background-color: white;
-  padding: 20px;
+  background-color: rgb(29, 28, 28);
+  padding: 15px;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  max-width: 100%; /* Ensure the card does not overflow */
-  box-sizing: border-box; /* Includes padding in the card's width calculation */
+  transition: transform 0.3s ease;
+  height: auto;
+  max-width: 100%;
 }
 
-/* Hover effect for the card */
+
 .card:hover {
   transform: scale(1.05);
 }
 
 .card img {
-  width: 100%; /* Ensure the image fills the card width */
+  width: 100%;
+  /* Adjusted to take the full card width */
   height: auto;
   border-radius: 8px;
 }
@@ -171,91 +184,47 @@ nav {
 .card h3 {
   margin-top: 10px;
   font-size: 22px;
+  color: white;
 }
 
 .card p {
   font-size: 16px;
-  color: #555;
+  color: rgb(226, 224, 224);
+  margin: 10px 0;
 }
 
-.back-button {
-  position: absolute;
-  top: 10px; /* Adjust top position as needed */
-  left: 10px; /* Adjust left position as needed */
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.home-content {
+/* Home Content Header */
+.select-subject-to-proceed {
+  color: whitesmoke;
   text-align: center;
-  padding: 40px;
+  font-size: 24px;
+  margin: 20px 0;
 }
 
-.home-content h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-}
-
-/* Make the layout responsive for smaller screens */
+/* Responsive Layouts */
 @media (max-width: 1024px) {
-  /* For medium screens like tablets, 3 cards per row */
   .cards-container {
-      grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row for tablets */
   }
 }
 
 @media (max-width: 768px) {
-  /* For mobile screens, 2 cards per row */
   .cards-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
-  /* For very small screens, 1 card per row */
   .cards-container {
-      grid-template-columns: 1fr; /* 1 card per row */
-  }
-
-  .card {
-      padding: 10px; /* Reduce padding on smaller screens */
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on very small screens */
   }
 }
 
-.exam-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-.exam-list .card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.exam-list .card:hover {
-  transform: scale(1.05);
-}
-
-.exam-list .exam-number {
-  font-weight: bold;
-  font-size: 20px;
-  color: #333;
-}
-
-.classes-6-10 {
+a {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
+
 footer {
   background: #00796b; /* Greenish color for background */
   color: white; /* White text */
@@ -266,34 +235,29 @@ footer {
   width: 100%; /* Ensure it spans the full width */
   position: relative; /* Keeps it in place */
   left: 0; /* Align to the left edge */
-  }
-  
-  /* Ensure no restrictions on parent container */
-  body {
-  margin: 0; /* Remove default browser margin */
-  }
-  
-  /* Ensuring no extra margin on paragraphs */
-  footer p {
+}
+
+/* Ensure no restrictions on parent container */
+footer p {
   margin: 0;
-  }
-  
-  footer .copyright {
-  
+}
+
+footer .copyright {
   line-height: 1.3; /* Adjust line-height for spacing */
-  }
-  footer .designby {
+}
+
+footer .designby {
   line-height: 3;
   font-size: 12px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .member-card {
     width: 90%;
   }
-  
+
   #about-us p {
     font-size: 1rem;
   }
-  }
+}

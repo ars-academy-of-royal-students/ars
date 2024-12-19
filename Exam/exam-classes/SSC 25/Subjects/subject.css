@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     /* Minimum height to cover the viewport */
     line-height: 1.5;
-    background: url(./../../../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
+    background: url(./../../../../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
     background-size: cover;
     /* Ensure the image covers the viewport without zooming */
     background-position: center;
