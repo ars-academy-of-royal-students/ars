@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  display: flex;
+ display: flex;
   flex-direction: column; /* Ensure content flows vertically */
   min-height: 100vh; /* Minimum height to cover the viewport */
   font-family: Arial, sans-serif;
@@ -20,7 +20,7 @@ body {
   background: url(./../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
   background-size: cover; /* Ensure the image covers the viewport without zooming */
   background-position: center; /* Crop evenly from both sides */
-  margin: 0;
+  margin: 0; 
   padding: 0;
 }
 
@@ -155,11 +155,17 @@ nav {
   margin: 0 auto;
   max-width: 1200px;
   /* Center content */
+  justify-items: center; /* Center all cards horizontally */
+  align-items: center;
   box-sizing: border-box;
 }
 
 .card {
   background-color: rgb(29, 28, 28);
+  width: 100%; /* Card width is flexible based on container */
+  height: 0;
+  padding-bottom: 133%; /* Maintain a 3:4 aspect ratio (height is 1.33x width) */
+  position: relative;
   padding: 15px;
   border-radius: 8px;
   text-align: center;
