@@ -9,13 +9,15 @@
 body {
   display: flex;
   flex-direction: column;
-  background: url(./../media/web\ page\ bg-01.jpg);
-  background-repeat: no-repeat;
+  background: url(./../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
   background-size: cover;
+  /* Ensure the image covers the viewport without zooming */
   background-position: center;
+  /* Crop evenly from both sides */
   color: #333;
   padding: 20px;
 }
+
 /* Navbar Styles */
 .navbar {
   display: flex;
@@ -27,17 +29,23 @@ body {
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  margin: 20px;; /* Center-align the navbar */
-  width: 100%; /* Adjust width to be almost full but leave room for aesthetics */
-  max-width: 1310px; /* Ensure it doesn’t become too wide on large screens */
+  margin: 20px;
+  ;
+  /* Center-align the navbar */
+  width: 100%;
+  /* Adjust width to be almost full but leave room for aesthetics */
+  max-width: 1310px;
+  /* Ensure it doesn’t become too wide on large screens */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-nav{
+
+nav {
   margin-left: 20px;
-  
-  }
+
+}
+
 /* Align items on the left side of the navbar */
 .navbar-left {
   display: flex;
@@ -69,7 +77,8 @@ nav{
 
 .navbar-right li {
   margin: 0 15px;
-  position: relative; /* Required for the hover effect */
+  position: relative;
+  /* Required for the hover effect */
 }
 
 .navbar-right .nav-link {
@@ -90,16 +99,19 @@ nav{
   bottom: 0;
   height: 2px;
   width: 0;
-  background-color: rgb(252, 16, 16); /* Aquamarine */
+  background-color: rgb(252, 16, 16);
+  /* Aquamarine */
   transition: width 0.3s ease;
 }
 
 .navbar-right .nav-link:hover::after {
-  width: 100%; /* Line grows across the text */
+  width: 100%;
+  /* Line grows across the text */
 }
 
 .navbar-right .nav-link:hover {
-  color: rgb(252, 15, 15); /* Text changes color on hover */
+  color: rgb(252, 15, 15);
+  /* Text changes color on hover */
 }
 
 /* Hamburger Menu */
@@ -119,35 +131,48 @@ nav{
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-right {
-      display: none;
-      flex-direction: column;
-      background-color: #333;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      width: 200px;
-      border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
   }
 
   .navbar-right.active {
-      display: flex;
+    display: flex;
   }
 
   .hamburger {
-      display: flex;
+    display: flex;
   }
 }
+
 .about-team {
   color: whitesmoke;
   text-align: center;
 }
 
 .about-team {
-  margin-bottom: 50px; /* Adjust the gap as needed */
+  margin-bottom: 50px;
+  /* Adjust the gap as needed */
+}
+
+.about-team h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-team h2 {
+  font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .section {
-  margin-top: 50px; /* Adjust the gap as needed */
+  margin-top: 50px;
+  /* Adjust the gap as needed */
 }
 
 
@@ -185,6 +210,7 @@ nav{
 .member-card img {
   width: 100%;
   height: 200px;
+  ;
   object-fit: cover;
 }
 
@@ -203,6 +229,7 @@ nav{
   font-size: 0.9rem;
   font-style: italic;
 }
+
 /* Section Styling */
 .section {
   margin-bottom: 40px;
@@ -228,19 +255,22 @@ h2.section-title {
   justify-content: center;
   align-items: center;
   transition: transform 0.5s ease, opacity 0.5s ease;
-  transform-origin: center center; /* Center the transform */
+  transform-origin: center center;
+  /* Center the transform */
 }
 
 /* Centered Effect - First Slide will be in center */
 .swiper-slide-active {
-  transform: scale(1.1) translateZ(0); /* Enlarged active slide */
+  transform: scale(1.1) translateZ(0);
+  /* Enlarged active slide */
   z-index: 2;
   opacity: 1;
 }
 
 .swiper-slide-next,
 .swiper-slide-prev {
-  transform: scale(0.9) translateX(-30px); /* Slightly smaller and offset */
+  transform: scale(0.9) translateX(-30px);
+  /* Slightly smaller and offset */
   z-index: 1;
   opacity: 0.8;
 }
@@ -322,19 +352,22 @@ h2.section-title {
 .swiper-pagination-bullet-active {
   background-color: #0c2e3e;
 }
+
 /* Center card behavior on mobile */
 @media screen and (max-width: 480px) {
   .swiper-slide {
-      display: none; /* Hide all cards initially */
+    display: none;
+    /* Hide all cards initially */
   }
 
   .swiper-slide.swiper-slide-active {
-      display: block; /* Only show the active centered card */
+    display: block;
+    /* Only show the active centered card */
   }
 
   /* Make sure the swiper wrapper is adjusted to show only the center card */
   .swiper-wrapper {
-      transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
   }
 }
 
@@ -342,79 +375,88 @@ h2.section-title {
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
   .swiper {
-      padding: 0 20px;
+    padding: 0 20px;
   }
 
   .card {
-      max-width: 260px;
+    max-width: 260px;
   }
 }
 
 @media (max-width: 768px) {
   .swiper {
-      padding: 0 10px;
+    padding: 0 10px;
   }
 
   .card {
-      max-width: 240px;
+    max-width: 240px;
   }
 }
 
 @media (max-width: 480px) {
   .swiper-slide {
-      width: 100% !important;
+    width: 100% !important;
   }
 
   .card {
-      max-width: 90%;
-      margin: 10px auto;
+    max-width: 90%;
+    margin: 10px auto;
   }
 
   .card-image {
-      width: 100px;
-      height: 100px;
+    width: 100px;
+    height: 100px;
   }
 }
+
 /* Footer Styles */
 footer {
-  background: #00796b; /* Greenish color for background */
-  color: white; /* White text */
-  text-align: center; /* Center the text */
-  padding: 1rem 0; /* Padding for top and bottom */
-  margin-top: 3rem; /* Space above footer */
-  font-size: 1rem; /* Font size */
-  width: 100%; /* Ensure it spans the full width */
-  position: relative; /* Keeps it in place */
-  left: 0; /* Align to the left edge */
-  }
-  
-  /* Ensure no restrictions on parent container */
-  body {
-  margin: 0; /* Remove default browser margin */
-  }
-  
-  /* Ensuring no extra margin on paragraphs */
-  footer p {
+  background: #00796b;
+  /* Greenish color for background */
+  color: white;
+  /* White text */
+  text-align: center;
+  /* Center the text */
+  padding: 1rem 0;
+  /* Padding for top and bottom */
+  margin-top: 3rem;
+  /* Space above footer */
+  margin-bottom: 0%;
+  font-size: 1rem;
+  /* Font size */
+  width: 100%;
+  /* Ensure it spans the full width */
+  position: relative;
+  /* Keeps it in place */
+  left: 0;
+  /* Align to the left edge */
+}
+
+/* Ensure no restrictions on parent container */
+body {
   margin: 0;
-  }
-  
-  footer .copyright {
-  
-  line-height: 1.3; /* Adjust line-height for spacing */
-  }
-  footer .designby {
+  /* Remove default browser margin */
+}
+
+/* Ensuring no extra margin on paragraphs */
+footer p {
+  margin: 0;
+}
+
+footer .copyright {
+
+  line-height: 1.3;
+  /* Adjust line-height for spacing */
+}
+
+footer .designby {
   line-height: 3;
   font-size: 12px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .member-card {
     width: 90%;
   }
-  
-  #about-us p {
-    font-size: 1rem;
-  }
-  }
-  
+}
