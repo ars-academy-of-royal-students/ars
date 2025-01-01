@@ -1,27 +1,24 @@
-/* Global Styles */
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Ensure consistent base font size */
 html {
   font-size: 16px; /* Default root font size */
 }
 
-body {
-  display: flex;
-  flex-direction: column; /* Ensure content flows vertically */
-  min-height: 100vh; /* Minimum height to cover the viewport */
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  background: url(./../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
-  background-size: cover; /* Ensure the image covers the viewport without zooming */
-  background-position: center; /* Crop evenly from both sides */
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url(./../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  padding: 20px;
 }
 
 /* Navbar Styles */
