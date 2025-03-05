@@ -14,12 +14,24 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background: url(./../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
+  min-height: 100vh; /* Ensure the body covers the full viewport height */
+  margin: 0;
+  background:url(./../media/web\ page\ bg-01.jpg) no-repeat center center fixed;
   background-size: cover;
-  color: #333;
-  padding: 20px;
 }
+
+.courses {
+  flex-grow: 1; /* Allows the content section to expand and push the footer down */
+}
+
+footer {
+  background: #00796b;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
 
 /* Navbar Styles */
 .navbar {
@@ -221,17 +233,6 @@ a {
   color: rgb(0, 0, 0);
 }
 
-footer {
-  background: #00796b; /* Greenish color for background */
-  color: white; /* White text */
-  text-align: center; /* Center the text */
-  padding: 1rem 0; /* Padding for top and bottom */
-  margin-top: 3rem; /* Space above footer */
-  font-size: 1rem; /* Font size */
-  width: 100%; /* Ensure it spans the full width */
-  position: relative; /* Keeps it in place */
-  left: 0; /* Align to the left edge */
-}
 
 /* Ensure no restrictions on parent container */
 footer p {
